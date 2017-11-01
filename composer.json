@@ -1,0 +1,44 @@
+{
+    "name": "fatboyxpc/slimphone",
+    "description": "Lightweight abstraction for telephone gateways",
+    "type": "library",
+    "authors": [
+        {
+            "name": "James LaChance",
+            "email": "fatboyxpc@gmail.com"
+        },
+        {
+            "name": "Brandon Bronisz",
+            "email": "bbronisz11@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.5",
+        "phpunit/phpunit": "^4.0",
+        "twilio/sdk": "^5.4",
+        "friendsofphp/php-cs-fixer": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fatboyxpc\\Cellphpone\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fatboyxpc\\Cellphpone\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --coverage-text; php-cs-fixer fix -v --diff --dry-run;",
+        "phpunit": "phpunit --coverage-text",
+        "phpcs": "php-cs-fixer fix -v --diff --dry-run;"
+    },
+    "extra": {
+        "gateways": [
+            "Twilio"
+        ]
+    }
+}
